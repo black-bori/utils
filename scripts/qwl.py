@@ -25,8 +25,8 @@ PADDING = 12
 
 
 def build_url(query: str) -> str:
-    #encoded = urllib.parse.quote_plus(query.strip)
-    encoded = query
+    encoded = urllib.parse.quote_plus(query.strip())
+    #encoded = query
 
     if "{query}" in BASE_URL_TEMPLATE:
         return BASE_URL_TEMPLATE.format(query=encoded)
@@ -62,7 +62,7 @@ def open_input_window() -> None:
     label.pack(fill="x")
 
     var = tk.StringVar()
-    entry = tk.Entry(frame, textvariable=var, font=("Consolas", 14))
+    entry = tk.Entry(frame, textvariable=var, font=("Consolas, Calibri", 14))
     entry.pack(fill="x", pady=(6, 0))
     entry.focus_set()
 
